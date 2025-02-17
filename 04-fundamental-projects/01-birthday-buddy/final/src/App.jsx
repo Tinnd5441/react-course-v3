@@ -5,12 +5,12 @@ function App() {
   const [people, setPeople] = useState(data);
   return (
     <main>
-      <section className='container'>
+      <section className='w-50 mx-auto mt-5'>
         <h3>{people.length} birthdays today</h3>
         <List people={people} />
         <button
           type='button'
-          className='btn btn-block'
+          className='p-2 bg-red-500 text-white rounded mt-3'
           onClick={() => setPeople([])}
         >
           clear all
