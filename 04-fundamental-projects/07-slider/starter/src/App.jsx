@@ -1,8 +1,10 @@
-const App = () => {
+import React from 'react'
+import Carousel from './components/Carousel'
+
+export default function App() {
   return (
     <main>
-      <h2>Slider Starter</h2>
+      <Carousel />
     </main>
-  );
-};
-export default App;
+  )
+}
