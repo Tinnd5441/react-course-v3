@@ -3,12 +3,21 @@ import axios from 'axios';
 const url = 'https://www.course-api.com/axios-tutorial-post';
 
 const PostRequest = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+  });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, email);
+    try {
+      const resp = await axios.post(url, formData);
+      console.log(resp);
+    } catch {
+      console.log('error');
+    }
   };
 
   return (
@@ -23,8 +32,8 @@ const PostRequest = () => {
             type='text'
             className='form-input'
             id='name'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={formData.name}
+            onChange={(e) =>  setFormData({ ...formData, [e.target.id]: e.target.value })}
           />
         </div>
         <div className='form-row'>
@@ -35,8 +44,8 @@ const PostRequest = () => {
             type='email'
             className='form-input'
             id='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formData.email}
+            onChange={(e) =>  setFormData({ ...formData, [e.target.id]: e.target.value })}
           />
         </div>
         <button type='submit' className='btn btn-block'>

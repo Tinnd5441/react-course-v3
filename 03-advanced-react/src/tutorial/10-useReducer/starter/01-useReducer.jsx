@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import { data } from '../../../data';
 const ReducerBasics = () => {
   const [people, setPeople] = React.useState(data);
