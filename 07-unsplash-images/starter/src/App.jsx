@@ -1,4 +1,14 @@
-const App = () => {
-  return <h1>Unsplash Images Starter</h1>;
-};
-export default App;
+import React from "react";
+import Gallery from "./components/Gallery";
+import SearchForm from "./components/SearchForm";
+import ThemeToggle from "./components/ThemeToggle";
+
+export default function App() {
+  return (
+    <main>
+      <ThemeToggle />
+      <SearchForm />
+      <Gallery />
+    </main>
+  );
+}
