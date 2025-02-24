@@ -1,3 +1,4 @@
+import ErrorElement from "./components/ErrorElement";
 import {
   HomeLayout,
   Landing,
@@ -13,6 +14,8 @@ import {
 } from "./pages";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import { loader as landingLoader } from "./pages/Landing";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +24,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
+        errorElement: <ErrorElement />,
+        loader: landingLoader,
         element: <Landing />,
       },
       {

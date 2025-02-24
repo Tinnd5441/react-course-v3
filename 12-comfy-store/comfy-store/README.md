@@ -552,6 +552,8 @@ const SubmitBtn = ({ text }) => {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
   return (
+
+    
     <button
       type='submit'
       className='btn btn-primary btn-block'
@@ -1209,7 +1211,7 @@ import { loader as landingLoader } from './pages/Landing';
 // actions
 
 const router = createBrowserRouter([
-  {
+  {  
     path: '/',
     element: <HomeLayout />,
     errorElement: <Error />,
