@@ -14,7 +14,6 @@ This approach will make it easier later to identify any potential bugs.
 
 ## Solution (1) - Setup Vite and Tailwind
 
-
 [Tailwind Docs](https://tailwindcss.com/docs/guides/vite)
 
 - setup vite project
@@ -264,6 +263,8 @@ HomeLayout.jsx
 
 ```js
 import { Outlet } from 'react-router-dom';
+
+
 
 const HomeLayout = () => {
   return (
@@ -3619,37 +3620,6 @@ const Navbar = () => {
 };
 export default Navbar;
 ```
-## Additional Logic
-
-Navbar.jsx
-
-```js
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from '../features/user/userSlice';
-
-const Navbar = () => {
-  const theme = useSelector((state) => state.userState.theme);
-  const isDarkTheme = theme === 'dracula';
-
-  return (...
-          {/* THEME SETUP */}
-          <label className='swap swap-rotate'>
-            <input
-              type='checkbox'
-              onChange={handleTheme}
-              defaultChecked={isDarkTheme}
-            />
-            {/* sun icon*/}
-            <BsSunFill className='swap-on h-4 w-4' />
-            {/* moon icon*/}
-            <BsMoonFill className='swap-off h-4 w-4' />
-          </label>
-          );
-          ...
-};
-export default Navbar;
-```
-
 
 ## Challenge (42) - Setup Logout and Access User
 

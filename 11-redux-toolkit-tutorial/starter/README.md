@@ -624,19 +624,21 @@ export const getCartItems = createAsyncThunk('cart/getCartItems', () => {
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
-  extraReducers: {
-    [getCartItems.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getCartItems.fulfilled]: (state, action) => {
-      console.log(action);
-      state.isLoading = false;
-      state.cartItems = action.payload;
-    },
-    [getCartItems.rejected]: (state) => {
-      state.isLoading = false;
-    },
-  },
+      extraReducers: (builder) => {
+        builder
+          .addCase(getCartItems.pending, (state) => {
+            state.isLoading = true;
+          })
+          .addCase(getCartItems.fulfilled, (state, action) => {
+            // console.log(action);
+            state.isLoading = false;
+            state.cartItems = action.payload;
+          })
+          .addCase(getCartItems.rejected, (state, action) => {
+            console.log(action);
+            state.isLoading = false;
+          });
+      },
 });
 ```
 
