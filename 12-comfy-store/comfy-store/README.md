@@ -1232,6 +1232,8 @@ Landing.js
 ```js
 import { Hero } from '../components';
 
+
+
 import { customFetch } from '../utils';
 const url = '/products?featured=true';
 
@@ -2664,7 +2666,7 @@ export const { addItem, removeItem, editItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
 ```
 
-store.js
+store.js 
 
 ```js
 import { configureStore } from '@reduxjs/toolkit';

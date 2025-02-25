@@ -15,6 +15,10 @@ import {
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { loader as landingLoader } from "./pages/Landing";
+import { loader as singleProductLoader } from "./pages/SingleProduct";
+import { loader as ProductsLoader } from "./pages/Products";
+
+import { action as registerAction } from "./pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -30,10 +34,14 @@ const router = createBrowserRouter([
       },
       {
         path: "products",
+        errorElement: <ErrorElement />,
+        loader: ProductsLoader,
         element: <Products />,
       },
       {
         path: "products/:id",
+        errorElement: <ErrorElement />,
+        loader: singleProductLoader,
         element: <SingleProduct />,
       },
       {
@@ -58,6 +66,7 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+    action: registerAction,
   },
   {
     path: "/login",
