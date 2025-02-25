@@ -12,13 +12,16 @@ import {
   Checkout,
   Orders,
 } from "./pages";
+import { store } from "./store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { loader as landingLoader } from "./pages/Landing";
 import { loader as singleProductLoader } from "./pages/SingleProduct";
 import { loader as ProductsLoader } from "./pages/Products";
+import { loader as checkoutLoader } from "./pages/Checkout";
 
 import { action as registerAction } from "./pages/Register";
+import { action as loginAction } from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +59,7 @@ const router = createBrowserRouter([
       {
         path: "checkout",
         element: <Checkout />,
+        loader: checkoutLoader(store),
       },
       {
         path: "orders",
@@ -71,6 +75,8 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    errorElement: <Error />,
+    action: loginAction(store),
   },
 ]);
 
