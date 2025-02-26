@@ -21,7 +21,7 @@ export default function Navbar() {
             to="/"
             className="hidden lg:flex btn btn-primary text-3xl items-center "
           >
-            C
+            Cb
           </NavLink>
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
