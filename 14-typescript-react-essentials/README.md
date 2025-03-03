@@ -599,7 +599,7 @@ export default Component;
 
 - reducer setup
 
-reducer.ts
+reducer.ts  
 
 ```ts
 export type CounterState = {
