@@ -30,6 +30,8 @@ export const metadata: Metadata = {
 };
 ```
 
+
+
 - get a hold of the README.MD
 
 ### Create Pages
@@ -480,6 +482,7 @@ DIRECT_URL=""
 - DIRECT_URL : Session + Password
 
 ```prisma
+
 datasource db {
   provider          = "postgresql"
   url               = env("DATABASE_URL")
